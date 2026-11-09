@@ -1,0 +1,379 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+body{
+    font-family: Georgia, serif;
+    background-color: #f5f5f5;
+    scroll-behavior: smooth;
+}
+.menu{
+    width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;             
+}
+header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #fff;
+    width: 100%;
+    clear: both;
+    content: "";
+    display: table;
+}
+
+#inicio,
+#productos,
+#contacto {
+    scroll-margin-top: 80px;
+}
+
+.logo{
+    height: 60px;   
+    width: auto;    
+    padding: 5px 0;
+}
+nav{
+    float: right;
+}
+nav ul li{
+    list-style: none;
+    margin-left: 75px;
+    float: left;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.inicio {
+  position: relative;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  overflow: hidden;
+  padding: 38px 8%;
+  background: #f9e8ed;
+}
+
+.texto {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  max-width: 530px;
+}
+
+.texto h1 {
+  margin: 0 0 8px;
+  color: #9f2758;
+  font-family: Georgia, serif;
+  font-size: clamp(1.9rem, 3.8vw, 3.2rem);
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.texto h2 {
+  margin: 0 0 12px;
+  color: #54283b;
+  font-family: Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: normal;
+  line-height: 1.3;
+}
+
+.descripcion {
+  max-width: 500px;
+  color: #543b45;
+  line-height: 1.6;
+}
+
+.inicio-boton {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 10px 21px;
+  border-radius: 25px;
+  color: #fff;
+  background: #b83e70;
+  box-shadow: 0 4px 10px rgba(100, 25, 55, 0.3);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.inicio-boton:hover {
+  background: #922b58;
+}
+
+.imagen {
+  flex: 0 0 42%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.imagen img {
+  width: 100%;
+  max-width: 330px;
+  height: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+  transform: rotate(6deg);
+  box-shadow: 10px 10px 0 rgba(184, 62, 112, 0.16);
+}
+
+.productos{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 0 40px;
+}
+
+.productos h2{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* 4 tarjetas por fila */
+    gap: 20px;
+}
+
+.card{
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.card img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;   /* recorta la foto sin deformarla */
+}
+
+.card-info {
+    padding: 15px;
+}
+
+.card h3 {
+    margin-bottom: 12px;
+}
+
+.card details {
+    border-top: 1px solid #f0d7e0;
+    padding-top: 10px;
+}
+
+.card summary {
+    color: #b83e70;
+    cursor: pointer;
+    font-weight: bold;
+    list-style: none;
+}
+
+.card summary::-webkit-details-marker {
+    display: none;
+}
+
+.card summary::after {
+    content: "+";
+    float: right;
+    font-size: 1.2rem;
+}
+
+.card details[open] summary::after {
+    content: "-";
+}
+
+.card p {
+    padding-top: 10px;
+    line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+    .menu,
+    .productos {
+        width: auto;
+        margin: 0 20px;
+    }
+
+    .inicio {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 35px 20px;
+    }
+
+    .texto {
+        max-width: none;
+    }
+
+    .texto h1 {
+        font-size: 2.2rem;
+    }
+
+    .imagen img {
+        max-width: 320px;
+        height: 240px;
+        transform: rotate(4deg);
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 450px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+.footer {
+    margin-top: 40px;
+    padding: 45px 5%;
+    color: #fff;
+    background: linear-gradient(110deg, #d2678e, #b83e70);
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1.3fr 1fr;
+    gap: 42px;
+}
+
+.footer-logo {
+    width: 90px;
+    height: 75px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.footer-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.footer h3,
+.footer h4 {
+    margin: 10px 0 8px;
+}
+
+.footer p {
+    line-height: 1.5;
+    margin: 5px 0;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links li {
+    margin: 8px 0;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-contact i {
+    width: 20px;
+    margin-right: 8px;
+    text-align: center;
+}
+
+.footer-contact a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    color: #b83e70;
+    background-color: #fff;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    background-color: #f9dce7;
+}
+
+.footer-bottom {
+    margin-top: 35px;
+    padding-top: 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.whatsapp-float {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 18px;
+    border-radius: 30px;
+    color: #fff;
+    background-color: #25d366;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.whatsapp-float:hover {
+    background-color: #1da851;
+}
+
+@media (max-width: 700px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .whatsapp-float span {
+        display: none;
+    }
+
+    .whatsapp-float {
+        width: 48px;
+        height: 48px;
+        justify-content: center;
+        padding: 0;
+        border-radius: 50%;
+    }
+}
